@@ -11,7 +11,8 @@ A pasta "app" contém os arquivos da interface web Flask (usar Python3.6, talvez
 A pasta "Arquivos_vhd" contém os os arquivos para a exercução do laboratório remoto no Vivado
 
 1 - Olhar manual.pdf
-2 - OLhar video tutorial
+
+2 - OLhar vídeo tutorial
 
 link do vídeo tutorial:
 https://www.youtube.com/watch?v=UCi_4dnp9Gk
