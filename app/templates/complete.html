@@ -1,0 +1,460 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+         .pequeno {
+             width: 5%;
+         }
+
+         .medio {
+             width: 50%;
+         }
+</style>
+
+
+
+
+
+
+
+  <script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<p style="font-size: 20px" align="right"><span id="clock"></span></p>
+
+<div class="jumbotron">
+<h2 align="center">Basys 3 implementada com sucesso</h2>
+
+
+<body class="body">
+   <div class="container" align="right">
+     <p style="font-size: 16px ">Outputs.txt</p>
+    <a href="/return-files/" target="blank"><button class='btn btn-default'>Download</button></a>
+   </div>
+</body>
+
+
+
+
+      <p style="font-size: 16px ">Transmissão:</p>
+    <img src="{{ url_for('calc') }}"  align="middle" style="width:720 ; height:300px;">
+
+
+
+    <body class="body">
+      <div class="container" align="middle">
+        <p style="font-size: 16px">Buttons:</p>
+        <div class="btn-group btn-group-xs">
+          <button id="reset" class="btn btn-success btn-xs"><span id="valreset1">{{btnu}}</span></button></>
+          <p style="font-size: 12px">[reset]</p>
+        </div>
+        <div class="btn-group btn-group-xs">
+          <button id="btnl" class="btn btn-success btn-xs"><span id="valbtnl">{{btnl}}</span></button>
+          <p style="font-size: 12px">[0]</p>
+        </div>
+        <div class="btn-group btn-group-xs">
+          <button id="btnc" class="btn btn-success btn-xs"><span id="valbtnc">{{btnc}}</span></button>
+          <p style="font-size: 12px">[1]</p>
+        </div>
+        <div class="btn-group btn-group-xs">
+          <button id="btnr" class="btn btn-success btn-xs"><span id="valbtnr">{{btnr}}</span></button>
+        <p style="font-size: 12px">[2]</p>
+        </div>
+        <div class="btn-group btn-group-xs">
+        <button id="btnd" class="btn btn-success btn-xs"><span id="valbtnd">{{btnd}}</span></button>
+        <p style="font-size: 12px">[3]</p>
+        </div>
+      </div>
+    </body>
+
+
+    <div class="container">
+      <p style="font-size: 16px ">Switches:</p>
+      <div class="btn-toolbar" >
+      <div class="btn-group btn-group-xs"  align="right">
+        <button id="btn15" class="btn btn-primary"><span id="val15">{{value1}}</span></button></>
+        <p style="font-size: 12px">[15]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn14" class="btn btn-primary"><span id="val14">{{value14}}</span></button></>
+        <p style="font-size: 12px">[14]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn13" class="btn btn-primary"><span id="val13">{{value13}}</span></button></>
+        <p style="font-size: 12px">[13]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn12" class="btn btn-primary"><span id="val12">{{value12}}</span></button></>
+        <p style="font-size: 12px">[12]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn11" class="btn btn-primary"><span id="val11">{{value11}}</span></button></>
+        <p style="font-size: 12px">[11]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn10" class="btn btn-primary"><span id="val10">{{value10}}</span></button></>
+        <p style="font-size: 12px">[10]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn9" class="btn btn-primary"><span id="val9">{{value9}}</span></button></>
+        <p style="font-size: 12px">[09]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn8" class="btn btn-primary"><span id="val8">{{value8}}</span></button></>
+        <p style="font-size: 12px">[08]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn7" class="btn btn-primary"><span id="val7">{{value7}}</span></button></>
+        <p style="font-size: 12px">[07]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn6" class="btn btn-primary"><span id="val6">{{value6}}</span></button></>
+        <p style="font-size: 12px">[06]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn5" class="btn btn-primary"><span id="val5">{{value5}}</span></button></>
+        <p style="font-size: 12px">[05]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn4" class="btn btn-primary"><span id="val4">{{value4}}</span></button></>
+        <p style="font-size: 12px">[04]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn3" class="btn btn-primary"><span id="val3">{{value3}}</span></button></>
+        <p style="font-size: 12px">[03]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn2" class="btn btn-primary"><span id="val2">{{value2}}</span></button></>
+        <p style="font-size: 12px">[02]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn1" class="btn btn-primary"><span id="val1">{{value1}}</span></button></>
+        <p style="font-size: 12px">[01]</p>
+      </div>
+
+      <div class="btn-group btn-group-xs">
+        <button id="btn0" class="btn btn-primary"><span id="val0">{{value0}}</span></button></>
+        <p style="font-size: 12px">[00]</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <script type="text/javascript">
+          $('button#btn15').click(function(){
+            $.ajax({
+                url: "/sw15/",
+                type: "POST",
+                success: function(resp){
+                        $('#val15').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn14').click(function(){
+            $.ajax({
+                url: "/sw14/",
+                type: "POST",
+                success: function(resp){
+                        $('#val14').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+      <script type="text/javascript">
+          $('button#btn13').click(function(){
+            $.ajax({
+                url: "/sw13/",
+                type: "POST",
+                success: function(resp){
+                        $('#val13').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+      <script type="text/javascript">
+          $('button#btn12').click(function(){
+            $.ajax({
+                url: "/sw12/",
+                type: "POST",
+                success: function(resp){
+                        $('#val12').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn11').click(function(){
+            $.ajax({
+                url: "/sw11/",
+                type: "POST",
+                success: function(resp){
+                        $('#val11').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn10').click(function(){
+            $.ajax({
+                url: "/sw10/",
+                type: "POST",
+                success: function(resp){
+                        $('#val10').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn9').click(function(){
+            $.ajax({
+                url: "/sw9/",
+                type: "POST",
+                success: function(resp){
+                        $('#val9').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+      <script type="text/javascript">
+          $('button#btn8').click(function(){
+            $.ajax({
+                url: "/sw8/",
+                type: "POST",
+                success: function(resp){
+                        $('#val8').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+      <script type="text/javascript">
+          $('button#btn7').click(function(){
+            $.ajax({
+                url: "/sw7/",
+                type: "POST",
+                success: function(resp){
+                        $('#val7').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn6').click(function(){
+            $.ajax({
+                url: "/sw6/",
+                type: "POST",
+                success: function(resp){
+                        $('#val6').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+      <script type="text/javascript">
+          $('button#btn5').click(function(){
+            $.ajax({
+                url: "/sw5/",
+                type: "POST",
+                success: function(resp){
+                        $('#val5').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+      <script type="text/javascript">
+          $('button#btn4').click(function(){
+            $.ajax({
+                url: "/sw4/",
+                type: "POST",
+                success: function(resp){
+                        $('#val4').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+      <script type="text/javascript">
+          $('button#btn3').click(function(){
+            $.ajax({
+                url: "/sw3/",
+                type: "POST",
+                success: function(resp){
+                        $('#val3').text(resp.data);
+                    }
+                });
+              });
+          </script>
+
+
+
+
+        <script type="text/javascript">
+            $('button#btn2').click(function(){
+              $.ajax({
+                  url: "/sw2/",
+                  type: "POST",
+                  success: function(resp){
+                          $('#val2').text(resp.data);
+                      }
+                  });
+                });
+            </script>
+
+
+
+
+        <script type="text/javascript">
+            $('button#btn1').click(function(){
+              $.ajax({
+                  url: "/sw1/",
+                  type: "POST",
+                  success: function(resp){
+                          $('#val1').text(resp.data);
+                      }
+                  });
+                });
+            </script>
+
+
+
+        <script type="text/javascript">
+            $('button#btn0').click(function(){
+              $.ajax({
+                  url: "/sw0/",
+                  type: "POST",
+                  success: function(resp){
+                          $('#val0').text(resp.data);
+                      }
+                  });
+                });
+            </script>
+
+
+   <script type="text/javascript">
+       $('button#reset').click(function(){
+         $.ajax({
+             url: "/btnu/",
+             type: "POST",
+             success: function(resp){
+                     $('#valreset1').text(resp.data);
+                 }
+             });
+           });
+       </script>
+
+       <script type="text/javascript">
+           $('button#btnl').click(function(){
+             $.ajax({
+                 url: "/btnl/",
+                 type: "POST",
+                 success: function(resp){
+                         $('#valbtnl').text(resp.data);
+                     }
+                 });
+               });
+        </script>
+
+           <script type="text/javascript">
+               $('button#btnc').click(function(){
+                 $.ajax({
+                     url: "/btnc/",
+                     type: "POST",
+                     success: function(resp){
+                             $('#valbtnc').text(resp.data);
+                         }
+                     });
+                   });
+               </script>
+
+
+              <script type="text/javascript">
+                  $('button#btnr').click(function(){
+                    $.ajax({
+                        url: "/btnr/",
+                        type: "POST",
+                        success: function(resp){
+                                $('#valbtnr').text(resp.data);
+                            }
+                        });
+                      });
+                  </script>
+
+                 <script type="text/javascript">
+                     $('button#btnd').click(function(){
+                       $.ajax({
+                           url: "/btnd/",
+                           type: "POST",
+                           success: function(resp){
+                                   $('#valbtnd').text(resp.data);
+                               }
+                           });
+                         });
+                     </script>
+
+
+
+
+  <span id="clock"></span>
+  <script type="text/javascript">
+    (function () {
+
+   var clockElement = document.getElementById( "clock" );
+
+   function updateClock ( clock ) {
+     clock.innerHTML = new Date().toLocaleTimeString();
+   }
+
+   setInterval(function () {
+       updateClock( clockElement );
+   }, 1000);
+
+ }());
+
+</script>
+{% endblock %}

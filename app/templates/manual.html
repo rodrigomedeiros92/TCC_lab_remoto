@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="jumbotron">
+  <p style="font-size: 12px">- A placa de uso é a Basys 3:</p>
+  <p style="font-size: 12px">1: Faça o download do arquivo Zip no link:<p>
+  <p style="font-size: 12px">2: Assista o vídeo tutorial, com o exemplo do contador de 1 segundo, de como implementar seu projeto e gerar o bitstream e usar no laboratório remoto;</p>
+  <p style="font-size: 12px">3: Faça o upload do arquivo. Não modifique o nome do arquivo 'top_wrapper.bit', o botão de upload aceita apenas esse formato;;</p>
+  <p style="font-size: 12px">4: Uma página será aberta com a transmissão ao vivo da FPGA, com possíveis atrasos; </p>
+  <p style="font-size: 12px">5: As chaves estão representados em azul e os botões em verde, a chave muda de estado e permanece, os botões são acionados e após 0.2 milissegundos volta ao estado zero; </p>
+  <p style="font-size: 12px">6: O botão de download possui o arquivo .txt dos outputs, em binário, da FPGA. O registro é feito por 10 segundos desde a implementação da placa;</p>
+  <p style="font-size: 12px">- A ordem dos dados de 8 bits com o respectivos tempo de registro são, necessariamente, nessa ordem: LEDs menos significativos, LEDs mais significativos, estados dos an e estado dos displays e ponto flutuante. Exemplo: </p>
+  <p style="font-size: 12px"> - </p>
+
+
+
+</div>
+
+
+{% endblock %}

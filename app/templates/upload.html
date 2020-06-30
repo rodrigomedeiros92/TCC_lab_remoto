@@ -1,0 +1,39 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+  <title>Enviar Arquivo 'top_wrapper.bit':</title>
+      <form method=post enctype=multipart/form-data>
+      <strong>Enviar Arquivo 'top_wrapper.bit'</strong><br>
+      <input id="file-picker" type=file name=file>
+            <div id="msg"></div>
+           <input type=submit value=Upload>
+        </form>
+
+        <script>
+    $("#file-picker").change(function(){
+        var input = document.getElementById('file-picker');
+        for (var i=0; i<input.files.length; i++)
+        {
+        //koala.jpg, koala.JPG substring(index) lastIndexOf('a') koala.1.jpg
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('o'))
+            if ((ext == 'op_wrapper.bit'))
+            {
+                $("#msg").text("Arquivo Suportado")
+            }
+            else
+            {
+                $("#msg").text("Arquivo não suportado")
+                document.getElementById("file-picker").value ="";
+            }
+        }
+    } );
+</script>
+</div>
+
+
+{% endblock %}

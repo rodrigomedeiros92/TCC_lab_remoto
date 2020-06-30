@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+    <title>{% block title %}Lab-Remoto{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static',
+    filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static',filename='js/bootstrap.min.js')}}"></script>
+
+<style>
+    .img img {
+        max-width:200px;
+        max-height:150px;
+        width: auto;
+        height: auto;
+    }
+</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <div class="img">
+            <img src="{{url_for('static', filename='fga.png')}}" width=360 height=240 align="left"/>
+          </div>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="{{ url_for('index') }}">Início</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('manual') }}">Manual</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('contato') }}">Contato</a></li>
+          </ul>
+        </nav>
+        <h1 class="text-muted" align="center" style="font-size: 40px">Laboratório Remoto de FPGAs</h1>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+
+
+
+      <footer class="footer">
+        <p>
+        <img src="{{url_for('static', filename='unb.png')}}" width=50 height=30  align="right"/>
+        <!--&copy;--> 2018 Universidade de Brasília, Faculdade do Gama.</p>
+
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
